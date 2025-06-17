@@ -1,34 +1,21 @@
-import rail from "indian-rail-api";
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-export const getTrainsBetween = (from, to) =>
-  new Promise((resolve, reject) => {
-    rail.getTrainBtwStation(from, to, (res) => {
-      try {
-        resolve(JSON.parse(res));
-      } catch (e) {
-        reject(e);
-      }
-    });
-  });
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const trains = JSON.parse(fs.readFileSync(path.join(__dirname, 'trains.json')));
 
-export const getTrainsOnDate = (from, to, dateDDMMYYYY) =>
-  new Promise((resolve, reject) => {
-    rail.getTrainOnDate(from, to, dateDDMMYYYY, (res) => {
-      try {
-        resolve(JSON.parse(res));
-      } catch (e) {
-        reject(e);
-      }
-    });
-  });
+export const getTrainsBetween = async (from, to) => {
+  const data = trains.filter(t => t.from === from && t.to === to);
+  return { data };
+};
 
-export const getRoute = (trainNo) =>
-  new Promise((resolve, reject) => {
-    rail.getRoute(trainNo, (res) => {
-      try {
-        resolve(JSON.parse(res));
-      } catch (e) {
-        reject(e);
-      }
-    });
-  });
+export const getTrainsOnDate = async (from, to, _dateDDMMYYYY) => {
+  return getTrainsBetween(from, to);
+};
+
+export const getRoute = async (trainNo) => {
+  const train = trains.find(t => t.number === trainNo);
+  if (!train) throw new Error('Train not found');
+  return { route: train.route };
+};
