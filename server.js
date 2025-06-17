@@ -41,4 +41,9 @@ app.get("/api/route/:trainNo", async (req, res) => {
 
 // --- boot -------------------------------------------------------------------
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`🚂 RailScanner backend up on :${PORT}`));
+
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => console.log(`🚂 RailScanner backend up on :${PORT}`));
+}
+
+export default app;
