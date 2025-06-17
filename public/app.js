@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const dateInput = document.getElementById('date');
   const form = document.getElementById('searchForm');
   const resultsEl = document.getElementById('results');
+  const baseURL = window.location.protocol === 'file:' ? 'http://localhost:4000' : '';
 
-  fetch('/api/stations')
+  fetch(`${baseURL}/api/stations`)
     .then(res => res.json())
     .then(stations => {
       stationList.innerHTML = stations
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toCode = toInput.value.split(' – ')[0];
     if (!fromCode || !toCode) return;
     const formatted = dateInput.value ? dateInput.value.split('-').reverse().join('-') : '';
-    const url = `/api/search?from=${fromCode}&to=${toCode}${formatted ? `&date=${formatted}` : ''}`;
+    const url = `${baseURL}/api/search?from=${fromCode}&to=${toCode}${formatted ? `&date=${formatted}` : ''}`;
     fetch(url)
       .then(res => res.json())
       .then(data => renderResults(data))
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function loadRoute(trainNo) {
-    const data = await (await fetch(`/api/route/${trainNo}`)).json();
+    const data = await (await fetch(`${baseURL}/api/route/${trainNo}`)).json();
     alert(`Route for ${trainNo}:\n` + data.route.map(r => `${r.station_name} (${r.station_code})`).join(' → '));
   }
 });
