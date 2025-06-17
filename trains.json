@@ -1,0 +1,80 @@
+[
+  {
+    "number": "12951",
+    "name": "Mumbai Rajdhani",
+    "from": "BCT",
+    "to": "NDLS",
+    "src_departure_time": "17:00",
+    "dest_arrival_time": "08:35",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "route": [
+      {"station_code": "BCT", "station_name": "Mumbai Central"},
+      {"station_code": "NDLS", "station_name": "New Delhi"}
+    ]
+  },
+  {
+    "number": "12952",
+    "name": "Mumbai Rajdhani",
+    "from": "NDLS",
+    "to": "BCT",
+    "src_departure_time": "16:20",
+    "dest_arrival_time": "07:55",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "route": [
+      {"station_code": "NDLS", "station_name": "New Delhi"},
+      {"station_code": "BCT", "station_name": "Mumbai Central"}
+    ]
+  },
+  {
+    "number": "12301",
+    "name": "Howrah Rajdhani",
+    "from": "HWH",
+    "to": "NDLS",
+    "src_departure_time": "16:55",
+    "dest_arrival_time": "10:05",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "route": [
+      {"station_code": "HWH", "station_name": "Howrah Jn"},
+      {"station_code": "NDLS", "station_name": "New Delhi"}
+    ]
+  },
+  {
+    "number": "12302",
+    "name": "Howrah Rajdhani",
+    "from": "NDLS",
+    "to": "HWH",
+    "src_departure_time": "17:35",
+    "dest_arrival_time": "09:55",
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    "route": [
+      {"station_code": "NDLS", "station_name": "New Delhi"},
+      {"station_code": "HWH", "station_name": "Howrah Jn"}
+    ]
+  },
+  {
+    "number": "12290",
+    "name": "Duronto Express",
+    "from": "BCT",
+    "to": "HWH",
+    "src_departure_time": "00:25",
+    "dest_arrival_time": "05:15",
+    "days": ["Mon", "Wed", "Fri"],
+    "route": [
+      {"station_code": "BCT", "station_name": "Mumbai Central"},
+      {"station_code": "HWH", "station_name": "Howrah Jn"}
+    ]
+  },
+  {
+    "number": "12289",
+    "name": "Duronto Express",
+    "from": "HWH",
+    "to": "BCT",
+    "src_departure_time": "20:00",
+    "dest_arrival_time": "23:35",
+    "days": ["Tue", "Thu", "Sun"],
+    "route": [
+      {"station_code": "HWH", "station_name": "Howrah Jn"},
+      {"station_code": "BCT", "station_name": "Mumbai Central"}
+    ]
+  }
+]

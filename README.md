@@ -1,7 +1,6 @@
 # RailScanner
 
-
-RailScanner is a simple web app inspired by Skyscanner that lets you search for Indian Railways trains. The project uses a Node.js Express backend with a minimal HTML/JS front end.
+RailScanner is a simple proof-of-concept web app inspired by Skyscanner that lets you search for Indian Railways trains. It uses a Node.js Express backend serving a minimal HTML/JavaScript front end.
 
 ## Features
 
@@ -14,13 +13,13 @@ RailScanner is a simple web app inspired by Skyscanner that lets you search for 
 ```
 railscanner/
 ├─ server.js        # Express API and static file server
-├─ railService.js   # Wrapper around indian-rail-api
+├─ railService.js   # Simple wrapper around a local trains dataset
 ├─ stations.json    # Station list used for autocomplete
+├─ trains.json      # Sample train data used by the API
 └─ public/
    ├─ index.html    # Front‑end UI
    ├─ app.js        # Client-side logic
    └─ styles.css    # UI styling
-
 ```
 
 ## Getting Started
@@ -39,6 +38,7 @@ railscanner/
    ```bash
    npm test
    ```
+
 ## API Endpoints
 
 - `GET /api/stations` – list of stations for autocomplete
