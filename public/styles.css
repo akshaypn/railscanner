@@ -1,7 +1,87 @@
-body { font-family: system-ui, sans-serif; margin: 0; }
-.container { max-width: 800px; margin: auto; padding: 1rem; }
-form { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
-input, button { padding: .4rem; font-size: 1rem; }
-table { width: 100%; border-collapse: collapse; }
-th, td { border: 1px solid #ddd; padding: .4rem .6rem; text-align: left; }
-tr:hover { background-color: #f6f6f6; cursor: pointer; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  background: #f2f6fa;
+  color: #333;
+}
+
+.header {
+  background: #0770e3;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.search-card label {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 180px;
+  font-size: .9rem;
+}
+
+.search-card input,
+.search-card button {
+  padding: .6rem;
+  font-size: 1rem;
+}
+
+.search-card button {
+  background: #0770e3;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-card button:hover {
+  background: #055bb5;
+}
+
+#results table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#results th,
+#results td {
+  padding: .6rem .8rem;
+  text-align: left;
+}
+
+#results tr:nth-child(even) {
+  background: #f2f6fa;
+}
+
+#results tr:hover {
+  background: #e8f1fb;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: .9rem;
+  color: #666;
+}
