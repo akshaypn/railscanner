@@ -1,25 +1,22 @@
 # RailScanner
 
-RailScanner is a simple proof-of-concept web app inspired by Skyscanner that lets you search for Indian Railways trains. It uses a Node.js Express backend serving a minimal HTML/JavaScript front end.
+RailScanner is a tiny proof‑of‑concept that demonstrates how to look up train information from the Indian Railways API on RapidAPI. It consists of a small Express backend and a minimal HTML/JavaScript front end.
 
 ## Features
 
-- Autocomplete for station codes using an offline dataset
-- Search trains between two stations with an optional date
-- Click a result row to see the full route of a train
+- Search details of a train by train number
+- Optionally fetch live status for a specific departure date
 
 ## Project Structure
 
 ```
 railscanner/
-├─ server.js        # Express API and static file server
-├─ railService.js   # Simple wrapper around a local trains dataset
-├─ stations.json    # Station list used for autocomplete
-├─ trains.json      # Sample train data used by the API
+├─ server.js      # Express API and static file server
+├─ railApi.js     # Thin wrapper around the RapidAPI endpoints
 └─ public/
-   ├─ index.html    # Front‑end UI
-   ├─ app.js        # Client-side logic
-   └─ styles.css    # UI styling
+   ├─ index.html  # Front-end UI
+   ├─ app.js      # Client-side logic
+   └─ styles.css  # UI styling
 ```
 
 ## Getting Started
@@ -41,9 +38,10 @@ railscanner/
 
 ## API Endpoints
 
-- `GET /api/stations` – list of stations for autocomplete
-- `GET /api/search?from=XXX&to=YYY[&date=DD-MM-YYYY]` – search trains
-- `GET /api/route/:trainNo` – fetch a train's route
+- `GET /api/train/:number` – train details from RapidAPI
+- `GET /api/status/:number?date=YYYYMMDD` – live train status
+
+Set the environment variable `RAPIDAPI_KEY` with your RapidAPI key for the requests to succeed.
 
 ## License
 
